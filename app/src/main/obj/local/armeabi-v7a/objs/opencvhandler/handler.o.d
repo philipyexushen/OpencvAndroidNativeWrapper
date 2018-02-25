@@ -1,22 +1,22 @@
-F:/win10/Philip/Documents/AndroidFiles/OpencvAndroidNativeWrapper/app/src/main/obj/local/armeabi-v7a/objs/opencvhandler/handler.o: \
-  F:/win10/Philip/Documents/AndroidFiles/OpencvAndroidNativeWrapper/app/src/main/jni/handler.cpp \
+F:/win10/Philip/Documents/AndroidFiles/OpencvAndroidNativeWrapper/app/src/main/obj/local/armeabi-v7a/objs/opencvhandler/./handler.o: \
+  F:/win10/Philip/Documents/AndroidFiles/OpencvAndroidNativeWrapper/app/src/main/jni/./handler.cpp \
   G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/opencv.hpp \
   G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/opencv_modules.hpp \
   G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/core.hpp \
   G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/core/cvdef.h \
   G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/core/hal/interface.h \
-  C:/Users/Philip/AppData/Local/Android/Sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\cstddef \
+  G:/AndroidSDK/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\cstddef \
   G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/core/cv_cpu_dispatch.h \
   G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/core/version.hpp \
   G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/core/base.hpp \
-  C:/Users/Philip/AppData/Local/Android/Sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\climits \
-  C:/Users/Philip/AppData/Local/Android/Sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\algorithm \
+  G:/AndroidSDK/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\climits \
+  G:/AndroidSDK/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\algorithm \
   G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/core/cvstd.hpp \
-  C:/Users/Philip/AppData/Local/Android/Sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\cstring \
-  C:/Users/Philip/AppData/Local/Android/Sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\cctype \
-  C:/Users/Philip/AppData/Local/Android/Sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\string \
-  C:/Users/Philip/AppData/Local/Android/Sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\cstdlib \
-  C:/Users/Philip/AppData/Local/Android/Sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\cmath \
+  G:/AndroidSDK/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\cstring \
+  G:/AndroidSDK/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\cctype \
+  G:/AndroidSDK/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\string \
+  G:/AndroidSDK/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\cstdlib \
+  G:/AndroidSDK/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\cmath \
   G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/core/ptr.inl.hpp \
   G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/core/neon_utils.hpp \
   G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/core/vsx_utils.hpp \
@@ -25,17 +25,17 @@ F:/win10/Philip/Documents/AndroidFiles/OpencvAndroidNativeWrapper/app/src/main/o
   G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/core/saturate.hpp \
   G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/core/fast_math.hpp \
   G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/core/types.hpp \
-  C:/Users/Philip/AppData/Local/Android/Sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\cfloat \
-  C:/Users/Philip/AppData/Local/Android/Sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\vector \
-  C:/Users/Philip/AppData/Local/Android/Sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\limits \
+  G:/AndroidSDK/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\cfloat \
+  G:/AndroidSDK/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\vector \
+  G:/AndroidSDK/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\limits \
   G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/core/mat.hpp \
   G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/core/bufferpool.hpp \
   G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/core/mat.inl.hpp \
   G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/core/persistence.hpp \
   G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/core/operations.hpp \
-  C:/Users/Philip/AppData/Local/Android/Sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\cstdio \
+  G:/AndroidSDK/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\cstdio \
   G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/core/cvstd.inl.hpp \
-  C:/Users/Philip/AppData/Local/Android/Sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\complex \
+  G:/AndroidSDK/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\complex \
   G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/core/utility.hpp \
   G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/core/core_c.h \
   G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/core/types_c.h \
@@ -50,19 +50,19 @@ F:/win10/Philip/Documents/AndroidFiles/OpencvAndroidNativeWrapper/app/src/main/o
   G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/calib3d/calib3d_c.h \
   G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/flann.hpp \
   G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/flann/flann_base.hpp \
-  C:/Users/Philip/AppData/Local/Android/Sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\cassert \
+  G:/AndroidSDK/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\cassert \
   G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/flann/general.h \
   G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/flann/matrix.h \
   G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/flann/params.h \
   G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/flann/any.h \
-  C:/Users/Philip/AppData/Local/Android/Sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\stdexcept \
-  C:/Users/Philip/AppData/Local/Android/Sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\typeinfo \
-  C:/Users/Philip/AppData/Local/Android/Sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\iostream \
-  C:/Users/Philip/AppData/Local/Android/Sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\map \
+  G:/AndroidSDK/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\stdexcept \
+  G:/AndroidSDK/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\typeinfo \
+  G:/AndroidSDK/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\iostream \
+  G:/AndroidSDK/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\map \
   G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/flann/saving.h \
   G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/flann/nn_index.h \
   G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/flann/result_set.h \
-  C:/Users/Philip/AppData/Local/Android/Sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\set \
+  G:/AndroidSDK/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\set \
   G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/flann/all_indices.h \
   G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/flann/kdtree_index.h \
   G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/flann/dynamic_bitset.h \
@@ -78,7 +78,7 @@ F:/win10/Philip/Documents/AndroidFiles/OpencvAndroidNativeWrapper/app/src/main/o
   G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/flann/hierarchical_clustering_index.h \
   G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/flann/lsh_index.h \
   G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/flann/lsh_table.h \
-  C:/Users/Philip/AppData/Local/Android/Sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\iomanip \
+  G:/AndroidSDK/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\iomanip \
   G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/flann/autotuned_index.h \
   G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/flann/ground_truth.h \
   G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/flann/index_testing.h \
@@ -98,7 +98,7 @@ F:/win10/Philip/Documents/AndroidFiles/OpencvAndroidNativeWrapper/app/src/main/o
   G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/objdetect.hpp \
   G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/objdetect/detection_based_tracker.hpp \
   G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/objdetect/objdetect_c.h \
-  C:/Users/Philip/AppData/Local/Android/Sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\deque \
+  G:/AndroidSDK/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\deque \
   G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/photo.hpp \
   G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/photo/photo_c.h \
   G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/shape.hpp \
@@ -116,9 +116,9 @@ F:/win10/Philip/Documents/AndroidFiles/OpencvAndroidNativeWrapper/app/src/main/o
   G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/stitching/detail/matchers.hpp \
   G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/stitching/detail/motion_estimators.hpp \
   G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/stitching/detail/util.hpp \
-  C:/Users/Philip/AppData/Local/Android/Sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\list \
+  G:/AndroidSDK/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\list \
   G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/stitching/detail/util_inl.hpp \
-  C:/Users/Philip/AppData/Local/Android/Sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\queue \
+  G:/AndroidSDK/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\queue \
   G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/stitching/detail/camera.hpp \
   G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/stitching/detail/exposure_compensate.hpp \
   G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/stitching/detail/seam_finders.hpp \
@@ -131,9 +131,9 @@ F:/win10/Philip/Documents/AndroidFiles/OpencvAndroidNativeWrapper/app/src/main/o
   G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/video/tracking_c.h \
   G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/videostab.hpp \
   G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/videostab/stabilizer.hpp \
-  C:/Users/Philip/AppData/Local/Android/Sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\ctime \
+  G:/AndroidSDK/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\ctime \
   G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/videostab/global_motion.hpp \
-  C:/Users/Philip/AppData/Local/Android/Sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\fstream \
+  G:/AndroidSDK/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\fstream \
   G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/videostab/optical_flow.hpp \
   G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/videostab/motion_core.hpp \
   G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/videostab/outlier_rejection.hpp \
@@ -158,7 +158,7 @@ G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/core/cvdef.h:
 
 G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/core/hal/interface.h:
 
-C:/Users/Philip/AppData/Local/Android/Sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\cstddef:
+G:/AndroidSDK/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\cstddef:
 
 G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/core/cv_cpu_dispatch.h:
 
@@ -166,21 +166,21 @@ G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/core/version.hpp:
 
 G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/core/base.hpp:
 
-C:/Users/Philip/AppData/Local/Android/Sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\climits:
+G:/AndroidSDK/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\climits:
 
-C:/Users/Philip/AppData/Local/Android/Sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\algorithm:
+G:/AndroidSDK/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\algorithm:
 
 G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/core/cvstd.hpp:
 
-C:/Users/Philip/AppData/Local/Android/Sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\cstring:
+G:/AndroidSDK/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\cstring:
 
-C:/Users/Philip/AppData/Local/Android/Sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\cctype:
+G:/AndroidSDK/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\cctype:
 
-C:/Users/Philip/AppData/Local/Android/Sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\string:
+G:/AndroidSDK/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\string:
 
-C:/Users/Philip/AppData/Local/Android/Sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\cstdlib:
+G:/AndroidSDK/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\cstdlib:
 
-C:/Users/Philip/AppData/Local/Android/Sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\cmath:
+G:/AndroidSDK/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\cmath:
 
 G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/core/ptr.inl.hpp:
 
@@ -198,11 +198,11 @@ G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/core/fast_math.hpp:
 
 G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/core/types.hpp:
 
-C:/Users/Philip/AppData/Local/Android/Sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\cfloat:
+G:/AndroidSDK/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\cfloat:
 
-C:/Users/Philip/AppData/Local/Android/Sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\vector:
+G:/AndroidSDK/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\vector:
 
-C:/Users/Philip/AppData/Local/Android/Sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\limits:
+G:/AndroidSDK/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\limits:
 
 G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/core/mat.hpp:
 
@@ -214,11 +214,11 @@ G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/core/persistence.hpp:
 
 G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/core/operations.hpp:
 
-C:/Users/Philip/AppData/Local/Android/Sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\cstdio:
+G:/AndroidSDK/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\cstdio:
 
 G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/core/cvstd.inl.hpp:
 
-C:/Users/Philip/AppData/Local/Android/Sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\complex:
+G:/AndroidSDK/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\complex:
 
 G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/core/utility.hpp:
 
@@ -248,7 +248,7 @@ G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/flann.hpp:
 
 G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/flann/flann_base.hpp:
 
-C:/Users/Philip/AppData/Local/Android/Sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\cassert:
+G:/AndroidSDK/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\cassert:
 
 G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/flann/general.h:
 
@@ -258,13 +258,13 @@ G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/flann/params.h:
 
 G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/flann/any.h:
 
-C:/Users/Philip/AppData/Local/Android/Sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\stdexcept:
+G:/AndroidSDK/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\stdexcept:
 
-C:/Users/Philip/AppData/Local/Android/Sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\typeinfo:
+G:/AndroidSDK/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\typeinfo:
 
-C:/Users/Philip/AppData/Local/Android/Sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\iostream:
+G:/AndroidSDK/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\iostream:
 
-C:/Users/Philip/AppData/Local/Android/Sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\map:
+G:/AndroidSDK/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\map:
 
 G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/flann/saving.h:
 
@@ -272,7 +272,7 @@ G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/flann/nn_index.h:
 
 G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/flann/result_set.h:
 
-C:/Users/Philip/AppData/Local/Android/Sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\set:
+G:/AndroidSDK/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\set:
 
 G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/flann/all_indices.h:
 
@@ -304,7 +304,7 @@ G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/flann/lsh_index.h:
 
 G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/flann/lsh_table.h:
 
-C:/Users/Philip/AppData/Local/Android/Sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\iomanip:
+G:/AndroidSDK/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\iomanip:
 
 G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/flann/autotuned_index.h:
 
@@ -344,7 +344,7 @@ G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/objdetect/detection_based_t
 
 G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/objdetect/objdetect_c.h:
 
-C:/Users/Philip/AppData/Local/Android/Sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\deque:
+G:/AndroidSDK/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\deque:
 
 G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/photo.hpp:
 
@@ -380,11 +380,11 @@ G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/stitching/detail/motion_est
 
 G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/stitching/detail/util.hpp:
 
-C:/Users/Philip/AppData/Local/Android/Sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\list:
+G:/AndroidSDK/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\list:
 
 G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/stitching/detail/util_inl.hpp:
 
-C:/Users/Philip/AppData/Local/Android/Sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\queue:
+G:/AndroidSDK/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\queue:
 
 G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/stitching/detail/camera.hpp:
 
@@ -410,11 +410,11 @@ G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/videostab.hpp:
 
 G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/videostab/stabilizer.hpp:
 
-C:/Users/Philip/AppData/Local/Android/Sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\ctime:
+G:/AndroidSDK/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\ctime:
 
 G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/videostab/global_motion.hpp:
 
-C:/Users/Philip/AppData/Local/Android/Sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\fstream:
+G:/AndroidSDK/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\fstream:
 
 G:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/videostab/optical_flow.hpp:
 

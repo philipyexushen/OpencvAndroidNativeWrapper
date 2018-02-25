@@ -13,7 +13,7 @@ using namespace std;
  * Method:    houghCircles
  * Signature: ([IIIDDDDII)[I
  */
-JNIEXPORT jintArray JNICALL Java_philipyexushen_opencvhandler_HandlerWrapper_houghCircles
+JNIEXPORT jintArray JNICALL Java_philipyexushen_opencvhandler_HandlerWrapper_nativeHoughCircles
         (JNIEnv *env, jclass, jintArray jintImgBuf, jint h, jint w, jdouble dp,
          jdouble minDist, jdouble cannyThreshold, jdouble accumulatorThreshold, jint minRadius, jint maxRadius) {
 
@@ -52,7 +52,7 @@ JNIEXPORT jintArray JNICALL Java_philipyexushen_opencvhandler_HandlerWrapper_hou
     return result;
 }
 
-JNIEXPORT jfloatArray JNICALL Java_philipyexushen_opencvhandler_HandlerWrapper_generalizedHoughBallard
+JNIEXPORT jfloatArray JNICALL Java_philipyexushen_opencvhandler_HandlerWrapper_nativeGeneralizedHoughBallard
         (JNIEnv *, jclass, jintArray, jintArray, jint, jint, jdouble, jdouble, jint, jint, jint) {
 
 }

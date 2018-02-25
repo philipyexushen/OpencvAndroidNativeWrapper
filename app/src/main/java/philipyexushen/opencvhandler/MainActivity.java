@@ -18,7 +18,6 @@ enum ImgState{
 public class MainActivity extends Activity implements View.OnClickListener, SeekBar.OnSeekBarChangeListener {
     // Used to load the 'native-lib' library on application startup.
     static {
-        System.loadLibrary("opencv_java3");
         System.loadLibrary("opencvhandler");
     }
 
@@ -62,26 +61,9 @@ public class MainActivity extends Activity implements View.OnClickListener, Seek
         imgaeView.setImageBitmap(bitmapOriginal);
 
         int h = bitmapOriginal.getHeight();
-        bitmapWithHoughCircles = doHoughCircles(bitmapOriginal, 1, h/8, 200,48,0,0);
+        bitmapWithHoughCircles = HandlerWrapper.houghCircles(bitmapOriginal, 1, h/8, 200,48,0,0);
 
         state = ImgState.Original;
-    }
-
-    private Bitmap doHoughCircles(Bitmap image, double dp,
-                                  double minDist, double cannyThreshold,
-                                  double accumulatorThreshold, int minRadius, int maxRadius){
-        int h = bitmapOriginal.getHeight(), w = bitmapOriginal.getWidth();
-        Bitmap result = Bitmap.createBitmap(w, h, Bitmap.Config.RGB_565);
-
-        int[] rawBitmap = new int[h*w];
-        bitmapOriginal.getPixels(rawBitmap,0, w, 0,0, w, h);
-
-        int[] rawbitmapWithHoughCircles
-                = HandlerWrapper.houghCircles(rawBitmap, h, w, dp,
-                minDist, cannyThreshold,accumulatorThreshold,minRadius,maxRadius);
-        result.setPixels(rawbitmapWithHoughCircles, 0,w,0,0, w, h);
-
-        return result;
     }
 
     public void onClick(View view) {
@@ -119,7 +101,7 @@ public class MainActivity extends Activity implements View.OnClickListener, Seek
                 break;
             default:
         }
-        bitmapWithHoughCircles = doHoughCircles(bitmapOriginal, 1, h/8, v1, v2, 0,0);
+        bitmapWithHoughCircles = HandlerWrapper.houghCircles(bitmapOriginal, 1, h/8, v1, v2, 0,0);
 
         if (state == ImgState.WithDetect){
             imgaeView.setImageBitmap(bitmapWithHoughCircles);
