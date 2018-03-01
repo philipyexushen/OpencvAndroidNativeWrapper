@@ -1,6 +1,7 @@
 package philipyexushen.opencvhandler;
 
 import android.graphics.Bitmap;
+import android.graphics.Color;
 
 /**
  * Created by Philip on 2018/2/24.
@@ -26,6 +27,41 @@ public class HandlerWrapper {
                                 minDist, cannyThreshold,accumulatorThreshold,minRadius,maxRadius);
         result.setPixels(rawBitmapWithHoughCircles, 0,w,0,0, w, h);
 
+        return result;
+    }
+
+    public static float []generalizedHoughBallard(Bitmap image, Bitmap templ,
+                                                 int cannyLowThresh, int cannyHighThresh,
+                                                 double minDist, double dp, int level, int votesThreshold,
+                                                 int maxBufferSize){
+        int h = image.getHeight(), w = image.getWidth();
+        int tempH = templ.getHeight(), tempW = templ.getWidth();
+
+        int[] rawSrcBitmap = new int[h*w];
+        image.getPixels(rawSrcBitmap,0, w, 0,0, w, h);
+
+        int[] rawTemplBitmap = new int[tempH*tempW];
+        templ.getPixels(rawTemplBitmap,0, tempW, 0,0, tempW, tempH);
+
+        return nativeGeneralizedHoughBallard(rawSrcBitmap, rawTemplBitmap, h, w, tempH, tempW,
+                cannyLowThresh, cannyHighThresh, minDist, dp, level, votesThreshold, maxBufferSize);
+    }
+
+    public static Bitmap drawGeneralizedHoughBallard(Bitmap image, float []position, int tempH, int tempW,
+                                                     int r, int g, int b,
+                                                     int thickness, int lineType, int shift){
+        int h = image.getHeight(), w = image.getWidth();
+        int[] rawSrcBitmap = new int[h*w];
+        image.getPixels(rawSrcBitmap,0, w, 0,0, w, h);
+        Bitmap result = Bitmap.createBitmap(w, h, Bitmap.Config.RGB_565);
+
+        assert(position.length % 4 == 0);
+
+        int[] rawBitmapWithHoughCircles
+                = nativeDrawGeneralizedHoughBallard(rawSrcBitmap, h, w, position, position.length, tempH, tempW,
+                        r, g, b, thickness, lineType, shift);
+
+        result.setPixels(rawBitmapWithHoughCircles, 0,w,0,0, w, h);
         return result;
     }
 
@@ -65,8 +101,16 @@ public class HandlerWrapper {
 
     //! Ballard, D.H. (1981). Generalizing the Hough transform to detect arbitrary shapes. Pattern Recognition 13 (2): 111-122.
     //! Detects position only without translation and rotation
+
     private static native float[]  nativeGeneralizedHoughBallard(int[] image, int[] template,
+                                                                 int h, int w,
+                                                                 int tempH, int tempW,
                                                                  int cannyLowThresh, int cannyHighThresh,
                                                                  double minDist, double dp, int level, int votesThreshold,
                                                                  int maxBufferSize);
+
+    private static native int[] nativeDrawGeneralizedHoughBallard(int[] image, int h, int w,
+                                                                  float []position, int posBufLength,int tempH, int tempW,
+                                                                  int r, int g, int b,
+                                                                  int thickness, int lineType, int shift);
 }
