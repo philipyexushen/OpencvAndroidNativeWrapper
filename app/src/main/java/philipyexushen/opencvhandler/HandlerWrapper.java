@@ -16,7 +16,8 @@ public class HandlerWrapper {
     public static Bitmap houghCircles(Bitmap image, double dp,
                                   double minDist, double cannyThreshold,
                                   double accumulatorThreshold, int minRadius, int maxRadius){
-        Log.v("INFO", "Begin houghCircles");
+        //PS: 我的测试机只能输出到w和e的调试信息。。。将就用吧
+        Log.w("INFO", "Begin houghCircles");
         int h = image.getHeight(), w = image.getWidth();
         Bitmap result = Bitmap.createBitmap(w, h, Bitmap.Config.RGB_565);
 
@@ -28,7 +29,7 @@ public class HandlerWrapper {
                                 minDist, cannyThreshold,accumulatorThreshold,minRadius,maxRadius);
         result.setPixels(rawBitmapWithHoughCircles, 0,w,0,0, w, h);
 
-        Log.v("INFO", "Call houghCircles successful");
+        Log.w("INFO", "Call houghCircles successful");
         return result;
     }
 
@@ -36,7 +37,13 @@ public class HandlerWrapper {
                                                  int cannyLowThresh, int cannyHighThresh,
                                                  double minDist, double dp, int level, int votesThreshold,
                                                  int maxBufferSize){
-        Log.v("INFO", "Begin generalizedHoughBallard");
+        Log.w("INFO", "Begin generalizedHoughBallard");
+        if (votesThreshold <= 0)
+        {
+            Log.e("ERROR", "votesThreshold <= 0");
+            return new float[0];
+        }
+
         int h = image.getHeight(), w = image.getWidth();
         int tempH = templ.getHeight(), tempW = templ.getWidth();
 
@@ -49,8 +56,8 @@ public class HandlerWrapper {
         float []result =  nativeGeneralizedHoughBallard(rawSrcBitmap, rawTemplBitmap, h, w, tempH, tempW,
                             cannyLowThresh, cannyHighThresh, minDist, dp, level, votesThreshold, maxBufferSize);
 
-        Log.v("INFO",String.format("Have Found %d position", result.length / 4));
-        Log.v("INFO", "Call hgeneralizedHoughBallard successful");
+        Log.w("INFO",String.format("Have Found %d position", result.length / 4));
+        Log.w("INFO", "Call hgeneralizedHoughBallard successful");
         return result;
     }
 
@@ -60,7 +67,7 @@ public class HandlerWrapper {
                                                double minScale,double maxScale,double scaleStep,double scaleThresh,
                                                double minAngle,double maxAngle,double angleStep,double angleThresh,
                                                int maxBufferSize){
-        Log.v("INFO", "Begin generalizedHoughGuil");
+        Log.w("INFO", "Begin generalizedHoughGuil");
         int h = image.getHeight(), w = image.getWidth();
         int tempH = templ.getHeight(), tempW = templ.getWidth();
 
@@ -76,28 +83,32 @@ public class HandlerWrapper {
                 minAngle, maxAngle, angleStep, angleThresh,
                 maxBufferSize);
 
-        Log.v("INFO",String.format("Have Found %d position", result.length / 4));
-        Log.v("INFO", "Call hgeneralizedHoughGuil successful");
+        Log.w("INFO",String.format("Have Found %d position", result.length / 4));
+        Log.w("INFO", "Call hgeneralizedHoughGuil successful");
         return result;
     }
 
     public static Bitmap drawGeneralizedHough(Bitmap image, float []position, int tempH, int tempW,
                                               int r, int g, int b,
                                               int thickness, int lineType, int shift){
-        Log.v("INFO", "Begin drawGeneralizedHoughBallard");
-        Log.v("INFO", String.format("Group of position %d", position.length / 4));
+        Log.w("INFO", "Begin drawGeneralizedHoughBallard");
+        Log.w("INFO", String.format("Group of position %d", position.length / 4));
 
+        if (position.length == 0){
+            return Bitmap.createBitmap(image);
+        }
         int h = image.getHeight(), w = image.getWidth();
+        Bitmap result = Bitmap.createBitmap(w, h, Bitmap.Config.RGB_565);
+
         int[] rawSrcBitmap = new int[h*w];
         image.getPixels(rawSrcBitmap,0, w, 0,0, w, h);
-        Bitmap result = Bitmap.createBitmap(w, h, Bitmap.Config.RGB_565);
 
         int[] rawBitmapWithHoughCircles
                 = nativeDrawGeneralizedHough(rawSrcBitmap, h, w, position, position.length, tempH, tempW,
                         r, g, b, thickness, lineType, shift);
 
         result.setPixels(rawBitmapWithHoughCircles, 0,w,0,0, w, h);
-        Log.v("INFO", "Call drawGeneralizedHough successful");
+        Log.w("INFO", "Call drawGeneralizedHough successful");
         return result;
     }
 
