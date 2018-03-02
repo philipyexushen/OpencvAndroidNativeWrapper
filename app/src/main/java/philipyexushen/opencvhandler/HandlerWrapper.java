@@ -1,7 +1,7 @@
 package philipyexushen.opencvhandler;
 
 import android.graphics.Bitmap;
-import android.graphics.Color;
+import android.util.Log;
 
 /**
  * Created by Philip on 2018/2/24.
@@ -16,6 +16,7 @@ public class HandlerWrapper {
     public static Bitmap houghCircles(Bitmap image, double dp,
                                   double minDist, double cannyThreshold,
                                   double accumulatorThreshold, int minRadius, int maxRadius){
+        Log.v("INFO", "Begin houghCircles");
         int h = image.getHeight(), w = image.getWidth();
         Bitmap result = Bitmap.createBitmap(w, h, Bitmap.Config.RGB_565);
 
@@ -27,6 +28,7 @@ public class HandlerWrapper {
                                 minDist, cannyThreshold,accumulatorThreshold,minRadius,maxRadius);
         result.setPixels(rawBitmapWithHoughCircles, 0,w,0,0, w, h);
 
+        Log.v("INFO", "Call houghCircles successful");
         return result;
     }
 
@@ -34,6 +36,7 @@ public class HandlerWrapper {
                                                  int cannyLowThresh, int cannyHighThresh,
                                                  double minDist, double dp, int level, int votesThreshold,
                                                  int maxBufferSize){
+        Log.v("INFO", "Begin generalizedHoughBallard");
         int h = image.getHeight(), w = image.getWidth();
         int tempH = templ.getHeight(), tempW = templ.getWidth();
 
@@ -43,25 +46,58 @@ public class HandlerWrapper {
         int[] rawTemplBitmap = new int[tempH*tempW];
         templ.getPixels(rawTemplBitmap,0, tempW, 0,0, tempW, tempH);
 
-        return nativeGeneralizedHoughBallard(rawSrcBitmap, rawTemplBitmap, h, w, tempH, tempW,
-                cannyLowThresh, cannyHighThresh, minDist, dp, level, votesThreshold, maxBufferSize);
+        float []result =  nativeGeneralizedHoughBallard(rawSrcBitmap, rawTemplBitmap, h, w, tempH, tempW,
+                            cannyLowThresh, cannyHighThresh, minDist, dp, level, votesThreshold, maxBufferSize);
+
+        Log.v("INFO",String.format("Have Found %d position", result.length / 4));
+        Log.v("INFO", "Call hgeneralizedHoughBallard successful");
+        return result;
     }
 
-    public static Bitmap drawGeneralizedHoughBallard(Bitmap image, float []position, int tempH, int tempW,
-                                                     int r, int g, int b,
-                                                     int thickness, int lineType, int shift){
+    public static float []generalizedHoughGuil(Bitmap image, Bitmap templ,
+                                               int cannyLowThresh, int cannyHighThresh,
+                                               double minDist, double dp, int level, int posThresh,
+                                               double minScale,double maxScale,double scaleStep,double scaleThresh,
+                                               double minAngle,double maxAngle,double angleStep,double angleThresh,
+                                               int maxBufferSize){
+        Log.v("INFO", "Begin generalizedHoughGuil");
+        int h = image.getHeight(), w = image.getWidth();
+        int tempH = templ.getHeight(), tempW = templ.getWidth();
+
+        int[] rawSrcBitmap = new int[h*w];
+        image.getPixels(rawSrcBitmap,0, w, 0,0, w, h);
+
+        int[] rawTemplBitmap = new int[tempH*tempW];
+        templ.getPixels(rawTemplBitmap,0, tempW, 0,0, tempW, tempH);
+
+        float []result =  nativeGeneralizedHoughGuil(rawSrcBitmap, rawTemplBitmap, h, w, tempH, tempW,
+                cannyLowThresh, cannyHighThresh, minDist, dp, level, posThresh,
+                minScale, maxScale, scaleStep, scaleThresh,
+                minAngle, maxAngle, angleStep, angleThresh,
+                maxBufferSize);
+
+        Log.v("INFO",String.format("Have Found %d position", result.length / 4));
+        Log.v("INFO", "Call hgeneralizedHoughGuil successful");
+        return result;
+    }
+
+    public static Bitmap drawGeneralizedHough(Bitmap image, float []position, int tempH, int tempW,
+                                              int r, int g, int b,
+                                              int thickness, int lineType, int shift){
+        Log.v("INFO", "Begin drawGeneralizedHoughBallard");
+        Log.v("INFO", String.format("Group of position %d", position.length / 4));
+
         int h = image.getHeight(), w = image.getWidth();
         int[] rawSrcBitmap = new int[h*w];
         image.getPixels(rawSrcBitmap,0, w, 0,0, w, h);
         Bitmap result = Bitmap.createBitmap(w, h, Bitmap.Config.RGB_565);
 
-        assert(position.length % 4 == 0);
-
         int[] rawBitmapWithHoughCircles
-                = nativeDrawGeneralizedHoughBallard(rawSrcBitmap, h, w, position, position.length, tempH, tempW,
+                = nativeDrawGeneralizedHough(rawSrcBitmap, h, w, position, position.length, tempH, tempW,
                         r, g, b, thickness, lineType, shift);
 
         result.setPixels(rawBitmapWithHoughCircles, 0,w,0,0, w, h);
+        Log.v("INFO", "Call drawGeneralizedHough successful");
         return result;
     }
 
@@ -109,8 +145,17 @@ public class HandlerWrapper {
                                                                  double minDist, double dp, int level, int votesThreshold,
                                                                  int maxBufferSize);
 
-    private static native int[] nativeDrawGeneralizedHoughBallard(int[] image, int h, int w,
-                                                                  float []position, int posBufLength,int tempH, int tempW,
-                                                                  int r, int g, int b,
-                                                                  int thickness, int lineType, int shift);
+    private static native float[]  nativeGeneralizedHoughGuil(int[] image, int[] template,
+                                                              int h, int w,
+                                                              int tempH, int tempW,
+                                                              int cannyLowThresh, int cannyHighThresh,
+                                                              double minDist, double dp, int level, int posThresh,
+                                                              double minScale,double maxScale,double scaleStep,double scaleThresh,
+                                                              double minAngle,double maxAngle,double angleStep,double angleThresh,
+                                                              int maxBufferSize);
+
+    private static native int[] nativeDrawGeneralizedHough(int[] image, int h, int w,
+                                                           float []position, int posBufLength,int tempH, int tempW,
+                                                           int r, int g, int b,
+                                                           int thickness, int lineType, int shift);
 }

@@ -25,10 +25,18 @@ JNIEXPORT jfloatArray JNICALL Java_philipyexushen_opencvhandler_HandlerWrapper_n
 
 /*
  * Class:     philipyexushen_opencvhandler_HandlerWrapper
- * Method:    nativeDrawGeneralizedHoughBallard
+ * Method:    nativeGeneralizedHoughGuil
+ * Signature: ([I[IIIIIIIDDIIDDDDDDDDI)[F
+ */
+JNIEXPORT jfloatArray JNICALL Java_philipyexushen_opencvhandler_HandlerWrapper_nativeGeneralizedHoughGuil
+  (JNIEnv *, jclass, jintArray, jintArray, jint, jint, jint, jint, jint, jint, jdouble, jdouble, jint, jint, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jdouble, jint);
+
+/*
+ * Class:     philipyexushen_opencvhandler_HandlerWrapper
+ * Method:    nativeDrawGeneralizedHough
  * Signature: ([III[FIIIIIIIII)[I
  */
-JNIEXPORT jintArray JNICALL Java_philipyexushen_opencvhandler_HandlerWrapper_nativeDrawGeneralizedHoughBallard
+JNIEXPORT jintArray JNICALL Java_philipyexushen_opencvhandler_HandlerWrapper_nativeDrawGeneralizedHough
   (JNIEnv *, jclass, jintArray, jint, jint, jfloatArray, jint, jint, jint, jint, jint, jint, jint, jint, jint);
 
 #ifdef __cplusplus

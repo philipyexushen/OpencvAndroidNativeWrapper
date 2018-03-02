@@ -50,6 +50,21 @@ JNIEXPORT jintArray JNICALL Java_philipyexushen_opencvhandler_HandlerWrapper_nat
     return jintImgBuf;
 }
 
+jfloatArray makeResultBuffer(JNIEnv *env, const std::vector<Vec4f> &position){
+    int size = 4*position.size();
+    jfloatArray result = env->NewFloatArray(size);
+    jfloat *resultBuf = env->GetFloatArrayElements(result, JNI_FALSE);
+
+    for (int i = 0; i < position.size(); i++) {
+        resultBuf[4 * i + 0] = position[i].val[0];
+        resultBuf[4 * i + 1] = position[i].val[1];
+        resultBuf[4 * i + 2] = position[i].val[2];
+        resultBuf[4 * i + 3] = position[i].val[3];
+    }
+    env->ReleaseFloatArrayElements(result, resultBuf, 0);
+
+    return result;
+}
 
 /*
  * Class:     philipyexushen_opencvhandler_HandlerWrapper
@@ -60,7 +75,8 @@ JNIEXPORT jfloatArray JNICALL Java_philipyexushen_opencvhandler_HandlerWrapper_n
         (JNIEnv *env, jclass, jintArray jintImgBuf, jintArray jintTempImgBuf,
          jint h, jint w,
          jint tempH, jint tempW,
-         jint cannyLowThresh, jint cannyHighThresh, jdouble minDist,
+         jint cannyLowThresh, jint cannyHighThresh,
+         jdouble minDist,
          jdouble dp, jint levels, jint votesThreshold, jint maxBufferSize) {
 
     jint *cbufImgSrc = env->GetIntArrayElements(jintImgBuf, JNI_FALSE);
@@ -90,31 +106,82 @@ JNIEXPORT jfloatArray JNICALL Java_philipyexushen_opencvhandler_HandlerWrapper_n
 
     std::vector<Vec4f> position;
     alg->detect(imgSrc, position);
-
-    int size = 4*position.size();
-    jfloatArray result = env->NewFloatArray(size);
-    jfloat *resultBuf = env->GetFloatArrayElements(result, JNI_FALSE);
-
-    for (int i = 0; i < position.size(); i++) {
-        resultBuf[4 * i + 0] = position[i].val[0];
-        resultBuf[4 * i + 1] = position[i].val[1];
-        resultBuf[4 * i + 2] = position[i].val[2];
-        resultBuf[4 * i + 3] = position[i].val[3];
-    }
+    jfloatArray result = makeResultBuffer(env, position);
 
     env->ReleaseIntArrayElements(jintImgBuf, cbufImgSrc, 0);
     env->ReleaseIntArrayElements(jintTempImgBuf, cbufImgTemp, 0);
-    env->ReleaseFloatArrayElements(result, resultBuf, 0);
 
     return result;
 }
 
 /*
  * Class:     philipyexushen_opencvhandler_HandlerWrapper
- * Method:    nativeDrawGeneralizedHoughBallard
+ * Method:    nativeGeneralizedHoughGuil
+ * Signature: ([I[IIIIIIIDDIIDDDDDDDDI)[F
+ */
+JNIEXPORT jfloatArray JNICALL Java_philipyexushen_opencvhandler_HandlerWrapper_nativeGeneralizedHoughGuil
+        (JNIEnv *env, jclass, jintArray jintImgBuf, jintArray jintTempImgBuf,
+         jint h, jint w,
+         jint tempH, jint tempW,
+         jint cannyLowThresh, jint cannyHighThresh,
+         jdouble minDist, jdouble dp, jint level, jint posThresh,
+         jdouble minScale,jdouble maxScale,jdouble scaleStep,jdouble scaleThresh,
+         jdouble minAngle,jdouble maxAngle,jdouble angleStep,jdouble angleThresh,
+         jint maxBufferSize){
+
+    jint *cbufImgSrc = env->GetIntArrayElements(jintImgBuf, JNI_FALSE);
+    jint *cbufImgTemp = env->GetIntArrayElements(jintTempImgBuf, JNI_FALSE);
+
+    if (cbufImgSrc == NULL || cbufImgTemp == NULL){
+        return env->NewFloatArray(0);
+    }
+
+    Mat imgSrc(h, w, CV_8UC4, (unsigned char *) cbufImgSrc);
+    Mat imgTemp(tempH, tempW, CV_8UC4, (unsigned char *) cbufImgTemp);
+
+    cv::cvtColor(imgSrc, imgSrc, cv::COLOR_BGRA2GRAY);
+    cv::cvtColor(imgTemp, imgTemp, cv::COLOR_BGRA2GRAY);
+
+    cv::Ptr<GeneralizedHough> alg;
+    cv::Ptr<GeneralizedHoughGuil> guil = createGeneralizedHoughGuil();
+
+    guil->setMinDist(minDist);
+    guil->setLevels(level);
+    guil->setDp(dp);
+    guil->setMaxBufferSize(maxBufferSize);
+
+    guil->setMinAngle(minAngle);
+    guil->setMaxAngle(maxAngle);
+    guil->setAngleStep(angleStep);
+    guil->setAngleThresh(angleThresh);
+
+    guil->setMinScale(minScale);
+    guil->setMaxScale(maxScale);
+    guil->setScaleStep(scaleStep);
+    guil->setScaleThresh(scaleThresh);
+
+    guil->setPosThresh(posThresh);
+
+    alg = guil;
+    alg->setTemplate(imgTemp);
+
+    std::vector<Vec4f> position;
+    alg->detect(imgSrc, position);
+
+    jfloatArray result = makeResultBuffer(env, position);
+
+    env->ReleaseIntArrayElements(jintImgBuf, cbufImgSrc, 0);
+    env->ReleaseIntArrayElements(jintTempImgBuf, cbufImgTemp, 0);
+
+    return result;
+}
+
+/*
+ * Class:     philipyexushen_opencvhandler_HandlerWrapper
+ * Method:    nativeDrawGeneralizedHough
  * Signature: ([III[FIIIIIIIII)[I
  */
-JNIEXPORT jintArray JNICALL Java_philipyexushen_opencvhandler_HandlerWrapper_nativeDrawGeneralizedHoughBallard
+JNIEXPORT jintArray JNICALL Java_philipyexushen_opencvhandler_HandlerWrapper_nativeDrawGeneralizedHough
         (JNIEnv *env, jclass, jintArray jintImgBuf, jint h, jint w, jfloatArray jfloatPositionBuf, jint posBufLength, jint tempH, jint tempW,
          jint r, jint g, jint b, jint thickness, jint lineType, jint shift)
 {

@@ -61,16 +61,25 @@ public class MainActivity extends Activity implements View.OnClickListener, Seek
         editText1.setFocusable(false);
         editText2.setFocusable(false);
 
-        //bitmapOriginal = ((BitmapDrawable)getResources().getDrawable(R.drawable.coinsrot2)).getBitmap();
-        bitmapOriginal = ((BitmapDrawable)getResources().getDrawable(R.drawable.pic1)).getBitmap();
-        bitmapTempl = ((BitmapDrawable)getResources().getDrawable(R.drawable.templ)).getBitmap();
+        bitmapOriginal = ((BitmapDrawable)getResources().getDrawable(R.drawable.coinsrot2)).getBitmap();
+        //bitmapOriginal = ((BitmapDrawable)getResources().getDrawable(R.drawable.pic1)).getBitmap();
+        bitmapTempl = ((BitmapDrawable)getResources().getDrawable(R.drawable.templ2)).getBitmap();
 
         //bitmapResult = HandlerWrapper.houghCircles(bitmapOriginal,
          //       1, h/8, 200,48,0,0);
         float[] position = HandlerWrapper.generalizedHoughBallard(bitmapOriginal, bitmapTempl,
                 50,100, v1,2, 360, v2, 1000);
+        /*
+                float[] position = HandlerWrapper.generalizedHoughGuil(bitmapOriginal, bitmapTempl,
+                50,100, v1,2,360, v2,
+                1,1.1,0.1,100,
+                0,1,1,1000,
+                1000);
+         */
+
+
         int tempH = bitmapTempl.getHeight(), tempW = bitmapTempl.getWidth();
-        bitmapResult = HandlerWrapper.drawGeneralizedHoughBallard(bitmapOriginal, position,
+        bitmapResult = HandlerWrapper.drawGeneralizedHough(bitmapOriginal, position,
                 tempH, tempW, 0,0,255,1,8,0);
         imageView.setImageBitmap(bitmapOriginal);
 
@@ -115,8 +124,16 @@ public class MainActivity extends Activity implements View.OnClickListener, Seek
         //bitmapResult = HandlerWrapper.houghCircles(bitmapOriginal, 1, h/8, v1, v2, 0,0);
         float[] position = HandlerWrapper.generalizedHoughBallard(bitmapOriginal, bitmapTempl,
                 50,100,v1,2, 360, v2, 1000);
+        /*
+                float[] position = HandlerWrapper.generalizedHoughGuil(bitmapOriginal, bitmapTempl,
+                50,100, v1,2,360, v2,
+                1,1.1,0.1,100,
+                0,1,1,1000,
+                1000);
+         */
+
         int tempH = bitmapTempl.getHeight(), tempW = bitmapTempl.getWidth();
-        bitmapResult= HandlerWrapper.drawGeneralizedHoughBallard(bitmapOriginal, position,
+        bitmapResult= HandlerWrapper.drawGeneralizedHough(bitmapOriginal, position,
                 tempH, tempW, 0,0,255,1,8,0);
 
         if (state == ImgState.WithDetect){
